@@ -40,9 +40,9 @@
       </el-input>
     </el-form-item>
     <el-form-item prop="code"
+                  class="login-code"
                   v-if="captchaMode">
       <el-input @keyup.enter="handleLogin"
-                :maxlength="code.len"
                 v-model="loginForm.code"
                 auto-complete="off"
                 :placeholder="$t('login.code')">
@@ -50,7 +50,7 @@
           <i class="icon-yanzhengma"></i>
         </template>
         <template #append>
-          <div class="login-code">
+          <div class="login-code-box">
             <img :src="loginForm.image"
                  class="login-code-img"
                  @click="refreshCode">
@@ -98,12 +98,6 @@ export default {
         image: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
       },
       checked: false,
-      code: {
-        src: "",
-        value: "",
-        len: 4,
-        type: "text"
-      },
       loginRules: {
         tenantId: [
           { required: false, message: "请输入租户ID", trigger: "blur" }
@@ -113,11 +107,11 @@ export default {
         ],
         password: [
           { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 6, message: "密码长度最少为6位", trigger: "blur" }
+          { min: 5, message: "密码长度最少为5位", trigger: "blur" }
         ],
         code: [
           { required: true, message: "请输入验证码", trigger: "blur" },
-          { min: 4, max: 4, message: "验证码长度为4位", trigger: "blur" }
+          { min: 5, max: 5, message: "验证码长度为5位", trigger: "blur" }
         ]
       }
     };

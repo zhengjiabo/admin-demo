@@ -28,7 +28,7 @@ export default {
   },
   inject: ["index"],
   created () {
-    this.getMenu();
+    // this.getMenu();
   },
   computed: {
     ...mapGetters(["tagCurrent", "menu"])

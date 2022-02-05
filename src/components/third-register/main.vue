@@ -42,7 +42,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { validatenull } from "utils/validate";
+import { validatenull } from "@/utils/validate";
 import { registerGuest } from "@/api/user";
 
 export default {

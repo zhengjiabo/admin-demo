@@ -523,7 +523,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import thirdRegister from 'components/third-register/main'
+import thirdRegister from '@/components/third-register/main.vue'
 export default {
   name: "wel",
   components: {

@@ -11,7 +11,7 @@ export default ({ mode, command }) => {
       port: 8080,
       proxy: {
         '/api': {
-          target: 'http://pig-gateway:9999',
+          target: 'http://test.javablade.com',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
         }

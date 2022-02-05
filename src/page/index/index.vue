@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    <wechat></wechat>
+    <!-- <wechat></wechat> -->
   </div>
 </template>
 

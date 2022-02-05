@@ -103,7 +103,6 @@
 </template>
 
 <script>
-import { baseUrl } from '@/config/env';
 import {
   getList,
   getUser,
