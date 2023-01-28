@@ -46,7 +46,7 @@
 import { add, getList, getMenu, remove, update } from "@/api/system/menu";
 import { mapGetters } from "vuex";
 import iconList from "@/config/iconList";
-
+import { baseUrl } from '@/config/env'
 export default {
   data () {
     return {
@@ -97,7 +97,7 @@ export default {
             label: "上级菜单",
             prop: "parentId",
             type: "tree",
-            dicUrl: "/api/blade-system/menu/tree",
+            dicUrl: baseUrl + "/blade-system/menu/tree",
             hide: true,
             props: {
               label: "title"

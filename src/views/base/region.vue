@@ -59,7 +59,7 @@
 import { getLazyTree, getDetail, submit, remove } from "@/api/base/region";
 import { mapGetters } from "vuex";
 import { validatenull } from "@/util/validate";
-
+import { baseUrl } from '@/config/env';
 export default {
   data () {
     return {
@@ -142,7 +142,7 @@ export default {
             label: "区划等级",
             prop: "level",
             type: "radio",
-            dicUrl: "/api/blade-system/dict/dictionary?code=region",
+            dicUrl: baseUrl + "/blade-system/dict/dictionary?code=region",
             props: {
               label: "dictValue",
               value: "dictKey"
@@ -191,7 +191,7 @@ export default {
               value: 'code'
             },
             cascaderItem: ['city', 'district'],
-            dicUrl: '/api/blade-system/region/select',
+            dicUrl: baseUrl + '/blade-system/region/select',
             span: 24,
           },
           {
@@ -203,7 +203,7 @@ export default {
               value: 'code'
             },
             dicFlag: false,
-            dicUrl: '/api/blade-system/region/select?code={{key}}',
+            dicUrl: baseUrl + '/blade-system/region/select?code={{key}}',
             span: 24,
           },
           {
@@ -215,7 +215,7 @@ export default {
               value: 'code'
             },
             dicFlag: false,
-            dicUrl: '/api/blade-system/region/select?code={{key}}',
+            dicUrl: baseUrl + '/blade-system/region/select?code={{key}}',
             span: 24,
           }
         ]
@@ -229,7 +229,7 @@ export default {
     'excelForm.isCovered' () {
       if (this.excelForm.isCovered !== '') {
         const column = this.findObject(this.excelOption.column, "excelFile");
-        column.action = `/api/blade-system/region/import-region?isCovered=${this.excelForm.isCovered}`;
+        column.action = `${baseUrl}/blade-system/region/import-region?isCovered=${this.excelForm.isCovered}`;
       }
     }
   },

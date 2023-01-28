@@ -35,7 +35,7 @@
 <script>
 import { getList, remove, update, add, getNotice } from "@/api/dept/notice";
 import { mapGetters } from "vuex";
-
+import { baseUrl } from '@/config/env';
 export default {
   data () {
     return {
@@ -73,7 +73,7 @@ export default {
           {
             label: "通知类型",
             type: "select",
-            dicUrl: "/api/blade-system/dict/dictionary?code=notice",
+            dicUrl: baseUrl + "/blade-system/dict/dictionary?code=notice",
             props: {
               label: "dictValue",
               value: "dictKey"

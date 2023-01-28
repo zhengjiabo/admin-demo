@@ -47,6 +47,7 @@
 <script>
 import { getList, getCode, build, remove, add, update, copy } from "@/api/tool/code";
 import { mapGetters } from "vuex";
+import { baseUrl } from '@/config/env';
 
 export default {
   data () {
@@ -79,7 +80,7 @@ export default {
             search: true,
             span: 24,
             type: "select",
-            dicUrl: "/api/blade-develop/datasource/select",
+            dicUrl: baseUrl + "/blade-develop/datasource/select",
             props: {
               label: "name",
               value: "id"
@@ -153,7 +154,7 @@ export default {
             label: "基础业务",
             prop: "baseMode",
             type: 'radio',
-            dicUrl: "/api/blade-system/dict/dictionary?code=yes_no",
+            dicUrl: baseUrl + "/blade-system/dict/dictionary?code=yes_no",
             props: {
               label: "dictValue",
               value: "dictKey"
@@ -169,7 +170,7 @@ export default {
             label: "包装器",
             prop: "wrapMode",
             type: 'radio',
-            dicUrl: "/api/blade-system/dict/dictionary?code=yes_no",
+            dicUrl: baseUrl + "/blade-system/dict/dictionary?code=yes_no",
             props: {
               label: "dictValue",
               value: "dictKey"

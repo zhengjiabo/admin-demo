@@ -103,6 +103,7 @@
 </template>
 
 <script>
+import { baseUrl } from '@/config/env';
 import {
   getList,
   getUser,
@@ -118,7 +119,7 @@ import { getPostList } from "@/api/system/post";
 import { mapGetters } from "vuex";
 import website from '@/config/website';
 import { getToken } from '@/util/auth';
-
+import { baseUrl } from '@/config/env'
 export default {
   data () {
     const validatePass = (rule, value, callback) => {
@@ -186,7 +187,7 @@ export default {
             label: "所属租户",
             prop: "tenantId",
             type: "tree",
-            dicUrl: "/api/blade-system/tenant/select",
+            dicUrl: baseUrl + "/blade-system/tenant/select",
             props: {
               label: "tenantName",
               value: "tenantId"
@@ -357,7 +358,7 @@ export default {
               res: 'data'
             },
             tip: '请上传 .xls,.xlsx 标准格式文件',
-            action: "/api/blade-user/import-user"
+            action: baseUrl + "/blade-user/import-user"
           },
           {
             label: '模板下载',
@@ -551,11 +552,11 @@ export default {
         cancelButtonText: "取消",
         type: "warning"
       }).then(() => {
-        window.open(`/api/blade-user/export-user?blade-auth=${getToken()}&account=${this.search.account}&realName=${this.search.realName}`);
+        window.open(`${baseUrl}/blade-user/export-user?blade-auth=${getToken()}&account=${this.search.account}&realName=${this.search.realName}`);
       });
     },
     handleTemplate () {
-      window.open(`/api/blade-user/export-template?blade-auth=${getToken()}`);
+      window.open(`${baseUrl}/blade-user/export-template?blade-auth=${getToken()}`);
     },
     beforeOpen (done, type) {
       if (["edit", "view"].includes(type)) {

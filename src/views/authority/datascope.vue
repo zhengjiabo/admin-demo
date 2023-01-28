@@ -75,6 +75,7 @@
 </template>
 
 <script>
+import { baseUrl } from '@/config/env';
 import {
   add,
   remove,
@@ -159,7 +160,7 @@ export default {
             label: "上级菜单",
             prop: "parentId",
             type: "tree",
-            dicUrl: "/api/blade-system/menu/tree",
+            dicUrl: baseUrl + "/blade-system/menu/tree",
             hide: true,
             props: {
               label: "title"
@@ -354,7 +355,7 @@ export default {
           {
             label: "规则类型",
             type: "select",
-            dicUrl: "/api/blade-system/dict/dictionary?code=data_scope_type",
+            dicUrl: baseUrl + "/blade-system/dict/dictionary?code=data_scope_type",
             props: {
               label: "dictValue",
               value: "dictKey"

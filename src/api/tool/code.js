@@ -1,8 +1,9 @@
 import request from '@/axios';
+import { baseUrl } from '@/config/env';
 
 export const getList = (current, size, params) => {
   return request({
-    url: '/api/blade-develop/code/list',
+    url: baseUrl + '/blade-develop/code/list',
     method: 'get',
     params: {
       ...params,
@@ -14,7 +15,7 @@ export const getList = (current, size, params) => {
 
 export const build = (ids) => {
   return request({
-    url: '/api/blade-develop/code/gen-code',
+    url: baseUrl + '/blade-develop/code/gen-code',
     method: 'post',
     params: {
       ids,
@@ -24,7 +25,7 @@ export const build = (ids) => {
 }
 export const remove = (ids) => {
   return request({
-    url: '/api/blade-develop/code/remove',
+    url: baseUrl + '/blade-develop/code/remove',
     method: 'post',
     params: {
       ids,
@@ -34,7 +35,7 @@ export const remove = (ids) => {
 
 export const add = (row) => {
   return request({
-    url: '/api/blade-develop/code/submit',
+    url: baseUrl + '/blade-develop/code/submit',
     method: 'post',
     data: row
   })
@@ -42,7 +43,7 @@ export const add = (row) => {
 
 export const update = (row) => {
   return request({
-    url: '/api/blade-develop/code/submit',
+    url: baseUrl + '/blade-develop/code/submit',
     method: 'post',
     data: row
   })
@@ -50,7 +51,7 @@ export const update = (row) => {
 
 export const copy = (id) => {
   return request({
-    url: '/api/blade-develop/code/copy',
+    url: baseUrl + '/blade-develop/code/copy',
     method: 'post',
     params: {
       id,
@@ -60,7 +61,7 @@ export const copy = (id) => {
 
 export const getCode = (id) => {
   return request({
-    url: '/api/blade-develop/code/detail',
+    url: baseUrl + '/blade-develop/code/detail',
     method: 'get',
     params: {
       id,

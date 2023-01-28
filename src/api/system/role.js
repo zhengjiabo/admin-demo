@@ -1,8 +1,9 @@
 import request from '@/axios';
+import { baseUrl } from '@/config/env';
 
 export const getList = (current, size, params) => {
   return request({
-    url: '/api/blade-system/role/list',
+    url: baseUrl + '/blade-system/role/list',
     method: 'get',
     params: {
       ...params,
@@ -13,14 +14,14 @@ export const getList = (current, size, params) => {
 }
 export const grantTree = () => {
   return request({
-    url: '/api/blade-system/menu/grant-tree',
+    url: baseUrl + '/blade-system/menu/grant-tree',
     method: 'get',
   })
 }
 
 export const grant = (roleIds, menuIds, dataScopeIds) => {
   return request({
-    url: '/api/blade-system/role/grant',
+    url: baseUrl + '/blade-system/role/grant',
     method: 'post',
     data: {
       roleIds,
@@ -32,7 +33,7 @@ export const grant = (roleIds, menuIds, dataScopeIds) => {
 
 export const remove = (ids) => {
   return request({
-    url: '/api/blade-system/role/remove',
+    url: baseUrl + '/blade-system/role/remove',
     method: 'post',
     params: {
       ids,
@@ -42,7 +43,7 @@ export const remove = (ids) => {
 
 export const add = (row) => {
   return request({
-    url: '/api/blade-system/role/submit',
+    url: baseUrl + '/blade-system/role/submit',
     method: 'post',
     data: row
   })
@@ -50,7 +51,7 @@ export const add = (row) => {
 
 export const update = (row) => {
   return request({
-    url: '/api/blade-system/role/submit',
+    url: baseUrl + '/blade-system/role/submit',
     method: 'post',
     data: row
   })
@@ -59,7 +60,7 @@ export const update = (row) => {
 
 export const getRole = (roleIds) => {
   return request({
-    url: '/api/blade-system/menu/role-tree-keys',
+    url: baseUrl + '/blade-system/menu/role-tree-keys',
     method: 'get',
     params: {
       roleIds,
@@ -69,7 +70,7 @@ export const getRole = (roleIds) => {
 
 export const getRoleTree = (tenantId) => {
   return request({
-    url: '/api/blade-system/role/tree',
+    url: baseUrl + '/blade-system/role/tree',
     method: 'get',
     params: {
       tenantId,

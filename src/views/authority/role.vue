@@ -68,6 +68,7 @@
 import { add, getList, getRole, getRoleTree, grant, grantTree, remove, update } from "@/api/system/role";
 import { mapGetters } from "vuex";
 import website from '@/config/website';
+import { baseUrl } from '@/config/env';
 
 export default {
   data () {
@@ -117,7 +118,7 @@ export default {
             label: "所属租户",
             prop: "tenantId",
             type: "tree",
-            dicUrl: "/api/blade-system/tenant/select",
+            dicUrl: baseUrl + "/blade-system/tenant/select",
             addDisplay: false,
             editDisplay: false,
             viewDisplay: website.tenantMode,

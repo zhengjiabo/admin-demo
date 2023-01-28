@@ -1,8 +1,9 @@
 import request from '@/axios';
+import { baseUrl } from '@/config/env';
 
 export const getList = (current, size, params) => {
   return request({
-    url: '/api/blade-system/post/list',
+    url: baseUrl + '/blade-system/post/list',
     method: 'get',
     params: {
       ...params,
@@ -14,7 +15,7 @@ export const getList = (current, size, params) => {
 
 export const getPostList = (tenantId) => {
   return request({
-    url: '/api/blade-system/post/select',
+    url: baseUrl + '/blade-system/post/select',
     method: 'get',
     params: {
       tenantId
@@ -24,7 +25,7 @@ export const getPostList = (tenantId) => {
 
 export const getDetail = (id) => {
   return request({
-    url: '/api/blade-system/post/detail',
+    url: baseUrl + '/blade-system/post/detail',
     method: 'get',
     params: {
       id
@@ -34,7 +35,7 @@ export const getDetail = (id) => {
 
 export const remove = (ids) => {
   return request({
-    url: '/api/blade-system/post/remove',
+    url: baseUrl + '/blade-system/post/remove',
     method: 'post',
     params: {
       ids,
@@ -44,7 +45,7 @@ export const remove = (ids) => {
 
 export const add = (row) => {
   return request({
-    url: '/api/blade-system/post/submit',
+    url: baseUrl + '/blade-system/post/submit',
     method: 'post',
     data: row
   })
@@ -52,7 +53,7 @@ export const add = (row) => {
 
 export const update = (row) => {
   return request({
-    url: '/api/blade-system/post/submit',
+    url: baseUrl + '/blade-system/post/submit',
     method: 'post',
     data: row
   })

@@ -38,7 +38,7 @@
 import { getList, getDetail, add, update, remove } from "@/api/system/post";
 import { mapGetters } from "vuex";
 import website from "@/config/website";
-
+import { baseUrl } from '@/config/env'
 export default {
   data () {
     return {
@@ -66,7 +66,7 @@ export default {
             label: "所属租户",
             prop: "tenantId",
             type: "tree",
-            dicUrl: "/api/blade-system/tenant/select",
+            dicUrl: baseUrl + "/blade-system/tenant/select",
             addDisplay: false,
             editDisplay: false,
             viewDisplay: website.tenantMode,
@@ -86,7 +86,7 @@ export default {
             label: "岗位类型",
             prop: "category",
             type: "select",
-            dicUrl: "/api/blade-system/dict/dictionary?code=post_category",
+            dicUrl: baseUrl + "/blade-system/dict/dictionary?code=post_category",
             props: {
               label: "dictValue",
               value: "dictKey"

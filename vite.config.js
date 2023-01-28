@@ -7,6 +7,16 @@ export default ({ mode, command }) => {
   const { VITE_APP_BASE } = env
   return defineConfig({
     base: VITE_APP_BASE,
+    server: {
+      port: 8080,
+      proxy: {
+        '/api': {
+          target: 'http://pig-gateway:9999',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '')
+        }
+      }
+    },
     resolve: {
       alias: {
         '~': resolve(__dirname, './'),

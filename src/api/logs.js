@@ -1,8 +1,9 @@
 import request from '@/axios';
+import { baseUrl } from '@/config/env';
 
 export const getUsualList = (current, size) => {
   return request({
-    url: '/api/blade-log/usual/list',
+    url: baseUrl + '/blade-log/usual/list',
     method: 'get',
     params: {
       current,
@@ -13,7 +14,7 @@ export const getUsualList = (current, size) => {
 
 export const getApiList = (current, size) => {
   return request({
-    url: '/api/blade-log/api/list',
+    url: baseUrl + '/blade-log/api/list',
     method: 'get',
     params: {
       current,
@@ -24,7 +25,7 @@ export const getApiList = (current, size) => {
 
 export const getErrorList = (current, size) => {
   return request({
-    url: '/api/blade-log/error/list',
+    url: baseUrl + '/blade-log/error/list',
     method: 'get',
     params: {
       current,
@@ -36,7 +37,7 @@ export const getErrorList = (current, size) => {
 
 export const getUsualLogs = (id) => {
   return request({
-    url: '/api/blade-log/usual/detail',
+    url: baseUrl + '/blade-log/usual/detail',
     method: 'get',
     params: {
       id,
@@ -45,7 +46,7 @@ export const getUsualLogs = (id) => {
 }
 export const getApiLogs = (id) => {
   return request({
-    url: '/api/blade-log/api/detail',
+    url: baseUrl + '/blade-log/api/detail',
     method: 'get',
     params: {
       id,
@@ -54,7 +55,7 @@ export const getApiLogs = (id) => {
 }
 export const getErrorLogs = (id) => {
   return request({
-    url: '/api/blade-log/error/detail',
+    url: baseUrl + '/blade-log/error/detail',
     method: 'get',
     params: {
       id,
