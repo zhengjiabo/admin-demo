@@ -190,7 +190,7 @@ export default {
               label: 'name',
               value: 'code'
             },
-            cascaderItem: ['city', 'district'],
+            cascader: ['city'],
             dicUrl: baseUrl + '/blade-system/region/select',
             span: 24,
           },
@@ -202,6 +202,7 @@ export default {
               label: 'name',
               value: 'code'
             },
+            cascader: ['district'],
             dicFlag: false,
             dicUrl: baseUrl + '/blade-system/region/select?code={{key}}',
             span: 24,
