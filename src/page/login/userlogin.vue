@@ -148,7 +148,7 @@ export default {
             spinner: "el-icon-loading"
           });
           this.$store.dispatch("LoginByUsername", this.loginForm).then(() => {
-            this.$router.push({ path: this.tagWel.value });
+            this.$router.push({ path: this.tagWel });
             loading.close();
           }).catch(() => {
             loading.close()
