@@ -17,7 +17,6 @@
                @on-load="onLoad">
       <template #menu-left>
         <el-button type="danger"
-                   size="small"
                    icon="el-icon-delete"
                    plain
                    @click="handleDelete">删 除
@@ -27,13 +26,11 @@
         <el-button text
                    type="primary"
                    icon="el-icon-edit-outline"
-                   size="small"
                    @click.stop="handleDesign(scope.row.name)">设计
         </el-button>
         <el-button text
                    type="primary"
                    icon="el-icon-view"
-                   size="small"
                    @click.stop="handlePreview(scope.row.name)">预览
         </el-button>
       </template>

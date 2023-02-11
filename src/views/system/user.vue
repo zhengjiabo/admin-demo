@@ -21,35 +21,30 @@
                @on-load="onLoad">
       <template #menu-left>
         <el-button type="danger"
-                   size="small"
                    icon="el-icon-delete"
                    plain
                    v-if="permission.user_delete"
                    @click="handleDelete">删 除
         </el-button>
         <el-button type="info"
-                   size="small"
                    plain
                    v-if="userInfo.authority.includes('admin')"
                    icon="el-icon-user"
                    @click="handleGrant">角色配置
         </el-button>
         <el-button type="primary"
-                   size="small"
                    plain
                    v-if="permission.user_reset"
                    icon="el-icon-refresh"
                    @click="handleReset">密码重置
         </el-button>
         <el-button type="success"
-                   size="small"
                    plain
                    v-if="userInfo.authority.includes('admin')"
                    icon="el-icon-upload2"
                    @click="handleImport">导入
         </el-button>
         <el-button type="warning"
-                   size="small"
                    plain
                    v-if="userInfo.authority.includes('admin')"
                    icon="el-icon-download"
@@ -117,7 +112,7 @@ import { getRoleTree } from "@/api/system/role";
 import { getPostList } from "@/api/system/post";
 import { mapGetters } from "vuex";
 import website from '@/config/website';
-import { getToken } from '@/util/auth';
+import { getToken } from '@/utils/auth';
 import { baseUrl } from '@/config/env'
 export default {
   data () {

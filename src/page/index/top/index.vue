@@ -39,7 +39,7 @@
              :src="userInfo.avatar">
         <el-dropdown>
           <span class="el-dropdown-link">
-            {{userInfo.username}}
+            {{userInfo.userName}}
           </span>
           <template #dropdown>
             <el-dropdown-menu>

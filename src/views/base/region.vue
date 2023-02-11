@@ -16,17 +16,14 @@
         <el-button-group>
           <el-button v-if="permission.region_add"
                      type="primary"
-                     size="small"
                      icon="el-icon-circle-plus-outline"
                      @click="addChildren">新增下级</el-button>
           <el-button v-if="permission.region_delete"
                      type="primary"
-                     size="small"
                      icon="el-icon-delete"
                      @click="handleDelete">删除</el-button>
           <el-button v-if="permission.region_debug"
                      type="primary"
-                     size="small"
                      icon="el-icon-video-play"
                      @click="handleDebug">调试</el-button>
         </el-button-group>
@@ -58,7 +55,7 @@
 <script>
 import { getLazyTree, getDetail, submit, remove } from "@/api/base/region";
 import { mapGetters } from "vuex";
-import { validatenull } from "@/util/validate";
+import { validatenull } from "@/utils/validate";
 import { baseUrl } from '@/config/env';
 export default {
   data () {

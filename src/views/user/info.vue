@@ -11,23 +11,23 @@
 
 <script>
 import option from "@/const/user/info";
-import {getUserInfo, update, updatePassword} from "@/api/system/user";
-import func from "@/util/func";
+import { getUserInfo, update, updatePassword } from "@/api/system/user";
+import func from "@/utils/func";
 
 
 export default {
-  data() {
+  data () {
     return {
       index: 0,
       option: option,
       form: {}
     };
   },
-  created() {
+  created () {
     this.handleWitch();
   },
   methods: {
-    handleSubmit(form, done) {
+    handleSubmit (form, done) {
       if (this.index === 0) {
         update(form).then(res => {
           if (res.data.success) {
@@ -66,7 +66,7 @@ export default {
         })
       }
     },
-    handleWitch() {
+    handleWitch () {
       if (this.index === 0) {
         getUserInfo().then(res => {
           const user = res.data.data;
@@ -81,7 +81,7 @@ export default {
         });
       }
     },
-    handleTabClick(tabs) {
+    handleTabClick (tabs) {
       this.index = func.toInt(tabs.index);
       this.handleWitch();
     }

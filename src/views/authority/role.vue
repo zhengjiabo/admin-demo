@@ -17,14 +17,12 @@
                @on-load="onLoad">
       <template #menu-left>
         <el-button type="danger"
-                   size="small"
                    icon="el-icon-delete"
                    v-if="permission.role_delete"
                    plain
                    @click="handleDelete">删 除
         </el-button>
-        <el-button size="small"
-                   icon="el-icon-delete"
+        <el-button icon="el-icon-delete"
                    @click="handleRole"
                    plain>权限设置
         </el-button>

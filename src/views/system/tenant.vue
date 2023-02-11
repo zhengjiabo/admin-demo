@@ -18,7 +18,6 @@
                @on-load="onLoad">
       <template #menu-left>
         <el-button type="danger"
-                   size="small"
                    icon="el-icon-delete"
                    v-if="permission.tenant_delete"
                    plain

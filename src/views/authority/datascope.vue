@@ -22,7 +22,6 @@
         <el-button text
                    type="primary"
                    icon="el-icon-setting"
-                   size="small"
                    v-if="permission.data_scope_setting"
                    plain
                    style="border: 0;background-color: transparent !important;"
@@ -60,7 +59,6 @@
                    @on-load="onLoadScope">
           <template #menu-left>
             <el-button type="danger"
-                       size="small"
                        icon="el-icon-delete"
                        plain
                        @click="handleDeleteScope">删 除
@@ -93,7 +91,7 @@ import {
 } from "@/api/system/scope";
 import { mapGetters } from "vuex";
 import iconList from "@/config/iconList";
-import func from "@/util/func";
+import func from "@/utils/func";
 
 export default {
   data () {

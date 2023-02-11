@@ -7,8 +7,7 @@
            label-width="0">
     <el-form-item v-if="tenantMode"
                   prop="tenantId">
-      <el-input size="small"
-                @keyup.enter="handleLogin"
+      <el-input @keyup.enter="handleLogin"
                 v-model="loginForm.tenantId"
                 auto-complete="off"
                 :placeholder="$t('login.tenantId')">

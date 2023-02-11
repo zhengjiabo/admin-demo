@@ -18,7 +18,6 @@
                @on-load="onLoad">
       <template #menu-left>
         <el-button type="danger"
-                   size="small"
                    icon="el-icon-delete"
                    v-if="permission.dict_delete"
                    plain
@@ -29,7 +28,6 @@
         <el-button text
                    type="primary"
                    icon="el-icon-circle-plus-outline"
-                   size="small"
                    @click.stop="handleAdd(scope.row,scope.index)"
                    v-if="userInfo.authority.includes('admin')">新增子项
         </el-button>

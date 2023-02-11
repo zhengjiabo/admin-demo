@@ -19,14 +19,12 @@
                @on-load="onLoad">
       <template #menu-left>
         <el-button type="danger"
-                   size="small"
                    icon="el-icon-delete"
                    v-if="permission.code_delete"
                    plain
                    @click="handleDelete">删 除
         </el-button>
         <el-button type="primary"
-                   size="small"
                    plain
                    icon="el-icon-refresh"
                    @click="handleBuild">代码生成
@@ -35,7 +33,6 @@
       <template #menu="scope">
         <el-button text
                    type="primary"
-                   size="small"
                    icon="el-icon-document-copy"
                    v-if="permission.code_edit"
                    @click.stop="handleCopy(scope.row)">复制
