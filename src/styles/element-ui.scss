@@ -37,3 +37,7 @@
 .el-dropdown-menu__item--divided:before, .el-menu, .el-menu--horizontal>.el-menu-item:not(.is-disabled):focus, .el-menu--horizontal>.el-menu-item:not(.is-disabled):hover, .el-menu--horizontal>.el-sub-menu .el-sub-menu__title:hover{
     background-color: transparent !important;
 }
+.el-collapse-item__header{
+  height:auto;
+  overflow: hidden;
+}

@@ -1,8 +1,9 @@
 import { setToken, removeToken } from 'utils/auth'
 import { setStore, getStore } from 'utils/store'
-import { encryption, deepClone } from 'utils/util'
-import { loginByUsername, getUserInfo, getMenu, getTopMenu, logout, refreshToken } from '@/api/user'
+import { deepClone } from 'utils/util'
+import { loginByUsername, getUserInfo, getMenu, getTopMenu, logout, refreshToken, getButtons } from '@/api/user'
 import { formatPath } from '@/router/avue-router'
+import { ElMessage } from 'element-plus'
 
 const user = {
   state: {
@@ -20,7 +21,7 @@ const user = {
     LoginByUsername ({ commit }, userInfo = {}) {
       return new Promise((resolve) => {
         loginByUsername(userInfo.tenantId, userInfo.username, userInfo.password, userInfo.type, userInfo.key, userInfo.code).then(res => {
-          const data = res.data.data;
+          const data = res.data;
           if (data.success) {
             commit('SET_TOKEN', data.data.accessToken);
             commit('SET_REFRESH_TOKEN', data.data.refreshToken);
@@ -28,7 +29,7 @@ const user = {
             commit('DEL_ALL_TAG');
             commit('CLEAR_LOCK');
           } else {
-            Message({
+            ElMessage({
               message: data.msg,
               type: 'error'
             })
@@ -138,6 +139,7 @@ const user = {
           const data = res.data.data
           let menu = deepClone(data);
           menu.forEach(ele => formatPath(ele, true));
+          console.log(menu)
           commit('SET_MENU', menu);
           commit('SET_MENU_ALL', menu);
           dispatch('GetButtons');
@@ -168,11 +170,11 @@ const user = {
     SET_MENUID (state, menuId) {
       state.menuId = menuId;
     },
-    SET_USERIFNO: (state, userInfo) => {
+    SET_USER_INFO: (state, userInfo) => {
       state.userInfo = userInfo;
       setStore({ name: 'userInfo', content: state.userInfo })
     },
-    SET_MENUALL: (state, menuAll) => {
+    SET_MENU_ALL: (state, menuAll) => {
       let menu = state.menuAll;
       menuAll.forEach(ele => {
         let index = menu.findIndex(item => item.path == ele.path)

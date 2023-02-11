@@ -124,7 +124,7 @@ export const formatPath = (ele, first) => {
   }
   const isChild = !!(ele[propsDefault.children] && ele[propsDefault.children].length !== 0);
   if (!isChild && first) {
-    ele[propsDefault.path] = ele[propsDefault.path]
+    ele.component = 'views' + ele[propsDefault.path]
     if (isURL(ele[propsDefault.href])) {
       let href = ele[propsDefault.href]
       ele.component = iframeComponent
@@ -132,12 +132,13 @@ export const formatPath = (ele, first) => {
     }
   } else {
     ele[propsDefault.children] && ele[propsDefault.children].forEach(child => {
+      child.component = 'views' + child[propsDefault.path]
       if (isURL(child[propsDefault.href])) {
         let href = child[propsDefault.href]
+        child[propsDefault.path] = ele[propsDefault.path] + '/' + child.code
         child.component = iframeComponent
         child[propsDefault.query] = { url: iframeSrc(href) }
       }
-      child[propsDefault.path] = `${ele[propsDefault.path]}/${child[propsDefault.path]}`
       formatPath(child);
     })
   }

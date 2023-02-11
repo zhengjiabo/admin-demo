@@ -24,12 +24,14 @@
         </el-button>
       </template>
       <template #menu="scope">
-        <el-button type="text"
+        <el-button text
+                   type="primary"
                    icon="el-icon-edit-outline"
                    size="small"
                    @click.stop="handleDesign(scope.row.name)">设计
         </el-button>
-        <el-button type="text"
+        <el-button text
+                   type="primary"
                    icon="el-icon-view"
                    size="small"
                    @click.stop="handlePreview(scope.row.name)">预览

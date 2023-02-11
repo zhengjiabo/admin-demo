@@ -19,7 +19,8 @@
                @on-load="onLoad"
                @tree-load="treeLoad">
       <template #menu="{row}">
-        <el-button type="text"
+        <el-button text
+                   type="primary"
                    icon="el-icon-setting"
                    size="small"
                    v-if="permission.data_scope_setting"
@@ -422,10 +423,10 @@ export default {
     ...mapGetters(["permission"]),
     permissionList () {
       return {
-        addBtn: this.vaildData(this.permission.menu_add, false),
-        viewBtn: this.vaildData(this.permission.menu_view, false),
-        delBtn: this.vaildData(this.permission.menu_delete, false),
-        editBtn: this.vaildData(this.permission.menu_edit, false)
+        addBtn: this.validData(this.permission.menu_add, false),
+        viewBtn: this.validData(this.permission.menu_view, false),
+        delBtn: this.validData(this.permission.menu_delete, false),
+        editBtn: this.validData(this.permission.menu_edit, false)
       };
     },
     ids () {

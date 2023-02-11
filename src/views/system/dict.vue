@@ -26,7 +26,8 @@
         </el-button>
       </template>
       <template #menu="scope">
-        <el-button type="text"
+        <el-button text
+                   type="primary"
                    icon="el-icon-circle-plus-outline"
                    size="small"
                    @click.stop="handleAdd(scope.row,scope.index)"
@@ -136,10 +137,10 @@ export default {
     ...mapGetters(["userInfo", "permission"]),
     permissionList () {
       return {
-        addBtn: this.vaildData(this.permission.dict_add, false),
-        viewBtn: this.vaildData(this.permission.dict_view, false),
-        delBtn: this.vaildData(this.permission.dict_delete, false),
-        editBtn: this.vaildData(this.permission.dict_edit, false)
+        addBtn: this.validData(this.permission.dict_add, false),
+        viewBtn: this.validData(this.permission.dict_view, false),
+        delBtn: this.validData(this.permission.dict_delete, false),
+        editBtn: this.validData(this.permission.dict_edit, false)
       };
     },
     ids () {

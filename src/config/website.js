@@ -34,12 +34,12 @@ export default {
   //配置菜单的属性
   menu: {
     iconDefault: 'icon-caidan',
-    label: 'label',
+    label: 'name',
     path: 'path',
     icon: 'icon',
     children: 'children',
     query: 'query',
-    href: 'href',
+    href: 'path',
     meta: 'meta'
   },
   // 授权地址

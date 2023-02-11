@@ -33,7 +33,8 @@
         </el-button>
       </template>
       <template #menu="scope">
-        <el-button type="text"
+        <el-button text
+                   type="primary"
                    size="small"
                    icon="el-icon-document-copy"
                    v-if="permission.code_edit"
@@ -213,10 +214,10 @@ export default {
     ...mapGetters(["permission"]),
     permissionList () {
       return {
-        addBtn: this.vaildData(this.permission.code_add, false),
-        viewBtn: this.vaildData(this.permission.code_view, false),
-        delBtn: this.vaildData(this.permission.code_delete, false),
-        editBtn: this.vaildData(this.permission.code_edit, false)
+        addBtn: this.validData(this.permission.code_add, false),
+        viewBtn: this.validData(this.permission.code_view, false),
+        delBtn: this.validData(this.permission.code_delete, false),
+        editBtn: this.validData(this.permission.code_edit, false)
       };
     },
     ids () {

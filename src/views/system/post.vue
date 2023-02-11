@@ -147,10 +147,10 @@ export default {
     ...mapGetters(["permission"]),
     permissionList () {
       return {
-        addBtn: this.vaildData(this.permission.post_add, false),
-        viewBtn: this.vaildData(this.permission.post_view, false),
-        delBtn: this.vaildData(this.permission.post_delete, false),
-        editBtn: this.vaildData(this.permission.post_edit, false)
+        addBtn: this.validData(this.permission.post_add, false),
+        viewBtn: this.validData(this.permission.post_view, false),
+        delBtn: this.validData(this.permission.post_delete, false),
+        editBtn: this.validData(this.permission.post_edit, false)
       };
     },
     ids () {
