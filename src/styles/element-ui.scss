@@ -41,3 +41,10 @@
   height:auto;
   overflow: hidden;
 }
+
+.el-button.is-text:not(.is-disabled):active{
+  background-color: transparent;
+}
+.el-button.is-text:not(.is-disabled):focus, .el-button.is-text:not(.is-disabled):hover{
+  background-color: transparent;
+}
