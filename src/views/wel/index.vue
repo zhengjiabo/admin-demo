@@ -1,28 +1,28 @@
 <template>
+  <basic-container>
+    <third-register></third-register>
+    <p style="text-align: center;">
+      <img src="https://img.shields.io/badge/Release-V3.5.0-green.svg"
+           alt="Downloads" />
+      <img src="https://img.shields.io/badge/JDK-1.8+-green.svg"
+           alt="Build Status" />
+      <img src="https://img.shields.io/badge/Spring%20Cloud-2021-blue.svg"
+           alt="Coverage Status" />
+      <img src="https://img.shields.io/badge/Spring%20Boot-2.7.1.RELEASE-blue.svg"
+           alt="Downloads" />
+      <a target="_blank"
+         href="https://bladex.vip">
+        <img src="https://img.shields.io/badge/Saber%20Author-Small%20Chill-ff69b4.svg"
+             alt="Downloads" />
+      </a>
+      <a target="_blank"
+         href="https://bladex.vip">
+        <img src="https://img.shields.io/badge/Copyright%20-@BladeX-%23ff3f59.svg"
+             alt="Downloads" />
+      </a>
+    </p>
+  </basic-container>
   <div>
-    <basic-container>
-      <third-register></third-register>
-      <p style="text-align: center;">
-        <img src="https://img.shields.io/badge/Release-V3.5.0-green.svg"
-             alt="Downloads" />
-        <img src="https://img.shields.io/badge/JDK-1.8+-green.svg"
-             alt="Build Status" />
-        <img src="https://img.shields.io/badge/Spring%20Cloud-2021-blue.svg"
-             alt="Coverage Status" />
-        <img src="https://img.shields.io/badge/Spring%20Boot-2.7.1.RELEASE-blue.svg"
-             alt="Downloads" />
-        <a target="_blank"
-           href="https://bladex.vip">
-          <img src="https://img.shields.io/badge/Saber%20Author-Small%20Chill-ff69b4.svg"
-               alt="Downloads" />
-        </a>
-        <a target="_blank"
-           href="https://bladex.vip">
-          <img src="https://img.shields.io/badge/Copyright%20-@BladeX-%23ff3f59.svg"
-               alt="Downloads" />
-        </a>
-      </p>
-    </basic-container>
     <el-row :span="24">
       <el-col :span="16">
         <basic-container>
@@ -95,7 +95,7 @@
         </basic-container>
       </el-col>
       <el-col :span="8">
-        <el-row>
+        <el-col :span="24">
           <basic-container>
             <div class="el-font-size">
               <span>产品名称</span>
@@ -151,8 +151,8 @@
               </span>
             </div>
           </basic-container>
-        </el-row>
-        <el-row>
+        </el-col>
+        <el-col :span="24">
           <basic-container>
             <el-collapse v-model="logActiveNames"
                          @change="handleChange">
@@ -517,7 +517,7 @@
               </el-collapse-item>
             </el-collapse>
           </basic-container>
-        </el-row>
+        </el-col>
       </el-col>
     </el-row>
   </div>

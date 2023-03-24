@@ -323,8 +323,8 @@ export default {
             label: "用户生日",
             type: "date",
             prop: "birthday",
-            format: "yyyy-MM-dd hh:mm:ss",
-            valueFormat: "yyyy-MM-dd hh:mm:ss",
+            format: "YYYY-MM-DD HH:mm:ss",
+            valueFormat: "YYYY-MM-DD HH:mm:ss",
             hide: true
           },
           {

@@ -36,7 +36,7 @@ export default {
     iconDefault: 'icon-caidan',
     label: 'name',
     path: 'path',
-    icon: 'icon',
+    icon: 'source',
     children: 'children',
     query: 'query',
     href: 'path',

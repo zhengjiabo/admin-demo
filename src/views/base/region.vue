@@ -16,7 +16,7 @@
         <el-button-group>
           <el-button v-if="permission.region_add"
                      type="primary"
-                     icon="el-icon-circle-plus-outline"
+                     icon="el-icon-plus"
                      @click="addChildren">新增下级</el-button>
           <el-button v-if="permission.region_delete"
                      type="primary"

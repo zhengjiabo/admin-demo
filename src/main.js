@@ -40,6 +40,7 @@ app.use(ElementPlus, {
 })
 app.use(Avue, {
   axios,
+  calcHeight: -165,
   locale: messages[language]
 })
 app.mount('#app')

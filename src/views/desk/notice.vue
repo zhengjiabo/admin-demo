@@ -90,8 +90,8 @@ export default {
             label: "通知日期",
             prop: "releaseTime",
             type: "date",
-            format: "yyyy-MM-dd hh:mm:ss",
-            valueFormat: "yyyy-MM-dd hh:mm:ss",
+            format: "YYYY-MM-DD HH:mm:ss",
+            valueFormat: "YYYY-MM-DD HH:mm:ss",
             rules: [{
               required: true,
               message: "请输入通知日期",

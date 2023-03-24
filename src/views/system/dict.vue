@@ -27,7 +27,7 @@
       <template #menu="scope">
         <el-button text
                    type="primary"
-                   icon="el-icon-circle-plus-outline"
+                   icon="el-icon-plus"
                    @click.stop="handleAdd(scope.row,scope.index)"
                    v-if="userInfo.authority.includes('admin')">新增子项
         </el-button>
@@ -151,8 +151,8 @@ export default {
   },
   methods: {
     handleAdd (row) {
-      this.$refs.crud.value.code = row.code;
-      this.$refs.crud.value.parentId = row.id;
+      this.$refs.crud.modelValue.code = row.code;
+      this.$refs.crud.modelValue.parentId = row.id;
       this.$refs.crud.option.column.filter(item => {
         if (item.prop === "code") {
           item.value = row.code;
