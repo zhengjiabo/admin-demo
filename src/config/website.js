@@ -13,7 +13,7 @@ export default {
   tokenTime: 6000,//token过期时间
   Authorization: 'Blade-Auth',
   //http的status默认放行不才用统一处理的,
-  statusWhiteList: [400],
+  statusWhiteList: [],
   //配置首页不可关闭
   setting: {
     sidebar: 'vertical',
