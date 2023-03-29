@@ -76,7 +76,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["menu", "tagList", "tag", "userInfo", "isMacOs"]),
+    ...mapGetters(["menu", "tagList", "tagWel", "tag", "userInfo", "isMacOs"]),
     labelKey () {
       return this.website.menu.label
     },
@@ -123,6 +123,7 @@ export default {
   methods: {
     switchTheme () {
       this.$store.commit('SET_THEME_NAME', '')
+      this.$router.push(this.tagWel);
       location.reload();
     },
     logout () {
