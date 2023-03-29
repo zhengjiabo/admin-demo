@@ -126,8 +126,10 @@ export default {
       location.reload();
     },
     logout () {
+      this.$store.commit('SET_THEME_NAME', '')
       this.$store.dispatch("LogOut").then(() => {
         this.$router.push({ path: "/login" });
+        location.reload();
       });
     },
     startTimer () {
