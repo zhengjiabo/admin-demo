@@ -14,6 +14,7 @@ import crudCommon from '@/mixins/crud.js'
 import { getScreen } from './utils/util'
 import './permission';
 import error from './error';
+import avueUeditor from 'components/avue-Ueditor/main.vue'
 import basicBlock from 'components/basic-block/main.vue'
 import basicContainer from 'components/basic-container/main.vue'
 import App from './App.vue'
@@ -26,6 +27,7 @@ const app = createApp(App)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
+app.component('avueUeditor', avueUeditor)
 app.component('basicContainer', basicContainer)
 app.component('basicBlock', basicBlock)
 app.config.globalProperties.$dayjs = dayjs

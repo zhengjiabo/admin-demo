@@ -48,3 +48,6 @@
 .el-button.is-text:not(.is-disabled):focus, .el-button.is-text:not(.is-disabled):hover{
   background-color: transparent;
 }
+.avue-icon i, .avue-icon svg{
+  line-height: 20px;
+}

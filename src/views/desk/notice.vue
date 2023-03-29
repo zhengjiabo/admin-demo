@@ -101,6 +101,7 @@ export default {
           {
             label: "通知内容",
             prop: "content",
+            component: 'avue-ueditor',
             span: 24,
             minRows: 6,
             type: "textarea"
