@@ -103,7 +103,7 @@ export default {
             prop: "content",
             component: 'avue-ueditor',
             span: 24,
-            minRows: 6,
+            minRows: 4,
             type: "textarea"
           }
         ]

@@ -124,13 +124,13 @@ export default {
     switchTheme () {
       this.$store.commit('SET_THEME_NAME', '')
       this.$router.push(this.tagWel);
-      location.reload();
+      setTimeout(() => location.reload())
     },
     logout () {
       this.$store.commit('SET_THEME_NAME', '')
       this.$store.dispatch("LogOut").then(() => {
         this.$router.push({ path: "/login" });
-        location.reload();
+        setTimeout(() => location.reload())
       });
     },
     startTimer () {

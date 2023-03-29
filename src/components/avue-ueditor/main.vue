@@ -1,13 +1,11 @@
 <template>
-  <div style="border: 1px solid #ccc;">
-    <Toolbar style="border-bottom: 1px solid #ccc"
+  <div class="editor—wrapper">
+    <Toolbar class="toolbar-container"
              :editor="editorRef"
-             :defaultConfig="toolbarConfig"
-             :mode="mode" />
-    <Editor style="height: 500px; overflow-y: hidden;"
+             :defaultConfig="toolbarConfig" />
+    <Editor :style="styleName"
             v-model="valueHtml"
             :defaultConfig="editorConfig"
-            :mode="mode"
             @onChange="onChange"
             @onCreated="handleCreated" />
   </div>
@@ -20,6 +18,12 @@ const emit = defineEmits();
 const props = defineProps({
   placeholder: String,
   modelValue: String,
+  minRows: [String, Number]
+})
+const styleName = computed(() => {
+  return {
+    height: props.minRows * 50 + 'px'
+  }
 })
 // 编辑器实例，必须用 shallowRef
 const editorRef = shallowRef()
@@ -52,4 +56,10 @@ const handleCreated = (editor) => {
 </script>
 
 <style>
+.editor—wrapper {
+  border: 1px solid #ccc;
+}
+.toolbar-container {
+  border-bottom: 1px solid #ccc;
+}
 </style>

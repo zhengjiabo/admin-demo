@@ -8,8 +8,6 @@
                           command="zh-cn">中文</el-dropdown-item>
         <el-dropdown-item :disabled="language==='en'"
                           command="en">English</el-dropdown-item>
-        <el-dropdown-item :disabled="language==='ja'"
-                          command="ja">日文</el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>

@@ -56,7 +56,7 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(to => {
   NProgress.done();
-  let title = router.$avueRouter.generateTitle(to)
+  let title = router.$avueRouter.generateTitle(to, { label: 'name' })
   router.$avueRouter.setTitle(title);
   store.commit('SET_IS_SEARCH', false)
 });
