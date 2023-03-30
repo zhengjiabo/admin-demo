@@ -348,7 +348,9 @@ export default {
     beforeOpen (done, type) {
       if (["edit", "view"].includes(type)) {
         getMenu(this.form.id).then(res => {
-          this.form = res.data.data;
+          this.form = Object.assign(res.data.data, {
+            hasChildren: this.form.hasChildren
+          })
         });
       }
       done();
