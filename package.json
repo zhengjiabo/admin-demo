@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.9",
-    "@smallwei/avue": "^3.2.12",
+    "@smallwei/avue": "^3.2.13",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^5.1.12",
     "animate.css": "^4.1.1",
