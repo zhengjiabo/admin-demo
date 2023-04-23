@@ -1,9 +1,8 @@
 import request from '@/axios';
-import { baseUrl } from '@/config/env';
 import website from "@/config/website";
 
 export const loginByUsername = (tenantId, account, password, type, key, code) => request({
-  url: baseUrl + '/blade-auth/token',
+  url: '/blade-auth/token',
   method: 'post',
   headers: {
     'Captcha-Key': key,
@@ -19,7 +18,7 @@ export const loginByUsername = (tenantId, account, password, type, key, code) =>
 });
 
 export const loginBySocial = (tenantId, source, code, state) => request({
-  url: baseUrl + '/blade-auth/token',
+  url: '/blade-auth/token',
   method: 'post',
   headers: {
     'Tenant-Id': tenantId
@@ -35,22 +34,27 @@ export const loginBySocial = (tenantId, source, code, state) => request({
 });
 
 export const getButtons = () => request({
-  url: baseUrl + '/blade-system/menu/buttons',
+  url: '/blade-system/menu/buttons',
   method: 'get'
 });
 
 export const getUserInfo = () => request({
-  url: baseUrl + '/user/getUserInfo',
+  url: '/user/getUserInfo',
   method: 'get'
 });
 
-export const refreshToken = () => request({
-  url: baseUrl + '/user/refesh',
-  method: 'post'
+export const refreshToken = (refreshToken) => request({
+  url: '/blade-auth/token',
+  method: 'post',
+  params: {
+    refreshToken,
+    grantType: "refresh_token",
+    scope: "all",
+  }
 })
 
 export const registerGuest = (form, oauthId) => request({
-  url: baseUrl + '/blade-user/register-guest',
+  url: '/blade-user/register-guest',
   method: 'post',
   params: {
     tenantId: form.tenantId,
@@ -62,27 +66,27 @@ export const registerGuest = (form, oauthId) => request({
 });
 
 export const getMenu = () => request({
-  url: baseUrl + '/blade-system/menu/routes',
+  url: '/blade-system/menu/routes',
   method: 'get'
 });
 
 export const getCaptcha = () => request({
-  url: baseUrl + '/blade-auth/captcha',
+  url: '/blade-auth/captcha',
   method: 'get'
 });
 
 export const getTopMenu = () => request({
-  url: baseUrl + '/user/getTopMenu',
+  url: '/user/getTopMenu',
   method: 'get'
 });
 
 export const sendLogs = (list) => request({
-  url: baseUrl + '/user/logout',
+  url: '/user/send-logs',
   method: 'post',
   data: list
 })
 
 export const logout = () => request({
-  url: baseUrl + '/user/logout',
-  method: 'get'
+  url: '/blade-auth/logout',
+  method: 'post'
 })

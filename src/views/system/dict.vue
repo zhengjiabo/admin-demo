@@ -61,7 +61,7 @@ export default {
         index: true,
         selection: true,
         viewBtn: true,
-        menuWidth: 300,
+        menuWidth: 350,
         column: [
           {
             label: "字典编号",

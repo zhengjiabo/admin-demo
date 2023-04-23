@@ -1,9 +1,8 @@
 import request from '@/axios';
-import { baseUrl } from '@/config/env';
 
 export const getList = (current, size, params) => {
   return request({
-    url: baseUrl + '/blade-system/client/list',
+    url: '/blade-system/client/list',
     method: 'get',
     params: {
       ...params,
@@ -15,7 +14,7 @@ export const getList = (current, size, params) => {
 
 export const getDetail = (id) => {
   return request({
-    url: baseUrl + '/blade-system/client/detail',
+    url: '/blade-system/client/detail',
     method: 'get',
     params: {
       id
@@ -25,7 +24,7 @@ export const getDetail = (id) => {
 
 export const remove = (ids) => {
   return request({
-    url: baseUrl + '/blade-system/client/remove',
+    url: '/blade-system/client/remove',
     method: 'post',
     params: {
       ids,
@@ -35,7 +34,7 @@ export const remove = (ids) => {
 
 export const add = (row) => {
   return request({
-    url: baseUrl + '/blade-system/client/submit',
+    url: '/blade-system/client/submit',
     method: 'post',
     data: row
   })
@@ -43,7 +42,7 @@ export const add = (row) => {
 
 export const update = (row) => {
   return request({
-    url: baseUrl + '/blade-system/client/submit',
+    url: '/blade-system/client/submit',
     method: 'post',
     data: row
   })

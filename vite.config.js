@@ -8,10 +8,10 @@ export default ({ mode, command }) => {
   return defineConfig({
     base: VITE_APP_BASE,
     server: {
-      port: 8080,
+      port: 2888,
       proxy: {
         '/api': {
-          target: 'http://test.javablade.com',
+          target: 'http://localhost',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
         }

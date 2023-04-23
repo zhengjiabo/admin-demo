@@ -1,7 +1,7 @@
-import { setToken, removeToken } from 'utils/auth'
-import { setStore, getStore } from 'utils/store'
-import { deepClone } from 'utils/util'
-import { loginByUsername, getUserInfo, getMenu, getTopMenu, logout, refreshToken, getButtons } from '@/api/user'
+import { setToken, setRefreshToken, removeToken, removeRefreshToken } from '@/utils/auth';
+import { setStore, getStore } from '@/utils/store'
+import { deepClone } from '@/utils/util'
+import { loginByUsername, loginBySocial, getUserInfo, getMenu, getTopMenu, logout, refreshToken, getButtons } from '@/api/user'
 import { formatPath } from '@/router/avue-router'
 import { ElMessage } from 'element-plus'
 
@@ -91,6 +91,7 @@ const user = {
           const data = res.data.data;
           commit('SET_TOKEN', data.data.accessToken);
           commit('SET_REFRESH_TOKEN', data.data.refreshToken);
+          commit('SET_USER_INFO', data.data);
           resolve(data);
         }).catch(error => {
           reject(error)
@@ -101,13 +102,15 @@ const user = {
     LogOut ({ commit }) {
       return new Promise((resolve, reject) => {
         logout().then(() => {
-          commit('SET_TOKEN', '')
+          commit('SET_TOKEN', '');
+          commit('SET_REFRESH_TOKEN', '');
           commit('SET_MENUALL_NULL', []);
           commit('SET_MENU', [])
           commit('SET_ROLES', [])
           commit('DEL_ALL_TAG', []);
           commit('CLEAR_LOCK');
           removeToken()
+          removeRefreshToken()
           resolve()
         }).catch(error => {
           reject(error)
@@ -118,12 +121,14 @@ const user = {
     FedLogOut ({ commit }) {
       return new Promise(resolve => {
         commit('SET_TOKEN', '')
+        commit('SET_REFRESH_TOKEN', '');
         commit('SET_MENUALL_NULL', []);
         commit('SET_MENU', [])
         commit('SET_ROLES', [])
         commit('DEL_ALL_TAG', []);
         commit('CLEAR_LOCK');
         removeToken()
+        removeRefreshToken()
         resolve()
       })
     },
@@ -165,11 +170,12 @@ const user = {
       state.token = token;
       setStore({ name: 'token', content: state.token })
     },
-    SET_REFRESH_TOKEN: (state, token) => {
-      state.refreshToken = token;
-      setStore({ name: 'refreshToken', content: state.token })
+    SET_REFRESH_TOKEN: (state, refreshToken) => {
+      setRefreshToken(refreshToken);
+      state.refreshToken = refreshToken;
+      setStore({ name: 'refreshToken', content: state.refreshToken })
     },
-    SET_MENUID (state, menuId) {
+    SET_MENU_ID (state, menuId) {
       state.menuId = menuId;
     },
     SET_USER_INFO: (state, userInfo) => {
@@ -179,8 +185,8 @@ const user = {
     SET_MENU_ALL: (state, menuAll) => {
       let menu = state.menuAll;
       menuAll.forEach(ele => {
-        let index = menu.findIndex(item => item.path == ele.path)
-        if (index == -1) {
+        let index = menu.findIndex(item => item.path === ele.path)
+        if (index === -1) {
           menu.push(ele);
         } else {
           menu[index] = ele;

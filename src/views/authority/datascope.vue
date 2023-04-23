@@ -177,7 +177,7 @@ export default {
             prop: "source",
             type: "icon",
             slot: true,
-            width: 80,
+            width: 100,
             iconList: iconList,
             rules: [
               {
@@ -264,7 +264,7 @@ export default {
             label: "菜单排序",
             prop: "sort",
             type: "number",
-            width: 80,
+            width: 100,
             rules: [
               {
                 required: true,

@@ -188,7 +188,7 @@ export default {
               value: 'code'
             },
             cascader: ['city'],
-            dicUrl: baseUrl + '/blade-system/region/select',
+            dicUrl: '/blade-system/region/select',
             span: 24,
           },
           {
@@ -201,7 +201,7 @@ export default {
             },
             cascader: ['district'],
             dicFlag: false,
-            dicUrl: baseUrl + '/blade-system/region/select?code={{key}}',
+            dicUrl: '/blade-system/region/select?code={{key}}',
             span: 24,
           },
           {
@@ -213,7 +213,7 @@ export default {
               value: 'code'
             },
             dicFlag: false,
-            dicUrl: baseUrl + '/blade-system/region/select?code={{key}}',
+            dicUrl: '/blade-system/region/select?code={{key}}',
             span: 24,
           }
         ]

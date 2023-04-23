@@ -2,23 +2,23 @@
   <basic-container>
     <third-register></third-register>
     <p style="text-align: center;">
-      <img src="https://img.shields.io/badge/Release-V3.5.0-green.svg"
-           alt="Downloads" />
+      <img src="https://img.shields.io/badge/Release-V3.6.0-green.svg"
+           alt="Downloads"/>
       <img src="https://img.shields.io/badge/JDK-1.8+-green.svg"
-           alt="Build Status" />
+           alt="Build Status"/>
       <img src="https://img.shields.io/badge/Spring%20Cloud-2021-blue.svg"
-           alt="Coverage Status" />
-      <img src="https://img.shields.io/badge/Spring%20Boot-2.7.1.RELEASE-blue.svg"
-           alt="Downloads" />
+           alt="Coverage Status"/>
+      <img src="https://img.shields.io/badge/Spring%20Boot-2.7.10.RELEASE-blue.svg"
+           alt="Downloads"/>
       <a target="_blank"
          href="https://bladex.vip">
         <img src="https://img.shields.io/badge/Saber%20Author-Small%20Chill-ff69b4.svg"
-             alt="Downloads" />
+             alt="Downloads"/>
       </a>
       <a target="_blank"
          href="https://bladex.vip">
         <img src="https://img.shields.io/badge/Copyright%20-@BladeX-%23ff3f59.svg"
-             alt="Downloads" />
+             alt="Downloads"/>
       </a>
     </p>
   </basic-container>
@@ -44,7 +44,7 @@
               <div>4.追求企业开发更加高效，部署更加方便，生产更加稳定</div>
               <div>5.GVP-码云最有价值开源项目</div>
               <div>6.BladeX授权地址:<a target="_blank"
-                   href="https://bladex.vip/#/vip">点击授权</a></div>
+                                   href="https://bladex.vip/#/vip">点击授权</a></div>
             </el-collapse-item>
             <el-collapse-item title="为何需要BladeX"
                               name="3">
@@ -99,51 +99,51 @@
           <basic-container>
             <div class="el-font-size">
               <span>产品名称</span>
-              <el-divider direction="vertical" />
+              <el-divider direction="vertical"/>
               <span>
                 <el-tag>SpringBlade企业级微服务开发平台</el-tag>
               </span>
-              <el-divider content-position="right"><i class="el-icon-star-off" /></el-divider>
+              <el-divider content-position="right"><i class="el-icon-star-off"/></el-divider>
               <span>账号密码</span>
-              <el-divider direction="vertical" />
+              <el-divider direction="vertical"/>
               <el-tag effect="plain">管理员(admin)</el-tag>
-              <el-divider content-position="right"><i class="el-icon-star-off" /></el-divider>
+              <el-divider content-position="right"><i class="el-icon-star-off"/></el-divider>
               <span>官网地址</span>
-              <el-divider direction="vertical" />
+              <el-divider direction="vertical"/>
               <span>
                 <el-link href="https://bladex.vip"
                          target="_blank"
                          type="primary">https://bladex.vip</el-link>
               </span>
-              <el-divider content-position="right"><i class="el-icon-star-off" /></el-divider>
+              <el-divider content-position="right"><i class="el-icon-star-off"/></el-divider>
               <span>社区地址</span>
-              <el-divider direction="vertical" />
+              <el-divider direction="vertical"/>
               <span>
                 <el-link href="https://sns.bladex.vip"
                          target="_blank"
                          type="primary">https://sns.bladex.vip</el-link>
               </span>
-              <el-divider content-position="right"><i class="el-icon-star-off" /></el-divider>
+              <el-divider content-position="right"><i class="el-icon-star-off"/></el-divider>
               <span>获取文档</span>
-              <el-divider direction="vertical" />
+              <el-divider direction="vertical"/>
               <span class="tag-group">
                 <el-tag type="success"
                         style="cursor: pointer"
                         onclick="window.open('https://sns.bladex.vip/note/view/1.html')">免费版</el-tag>
-                <el-divider direction="vertical" />
+                <el-divider direction="vertical"/>
                 <el-tag type="danger"
                         style="cursor: pointer"
                         onclick="window.open('https://www.kancloud.cn/@smallchill')">收费版</el-tag>
               </span>
-              <el-divider content-position="right"><i class="el-icon-star-off" /></el-divider>
+              <el-divider content-position="right"><i class="el-icon-star-off"/></el-divider>
               <span>获取源码</span>
-              <el-divider direction="vertical" />
+              <el-divider direction="vertical"/>
               <span class="tag-group">
                 <el-tag type="success"
                         effect="dark"
                         style="cursor: pointer"
                         onclick="window.open('https://gitee.com/smallc/SpringBlade')">开源版</el-tag>
-                <el-divider direction="vertical" />
+                <el-divider direction="vertical"/>
                 <el-tag type="danger"
                         effect="dark"
                         style="cursor: pointer"
@@ -156,6 +156,25 @@
           <basic-container>
             <el-collapse v-model="logActiveNames"
                          @change="handleChange">
+              <el-collapse-item title="3.6.0发布 基于vue3的前端架构正式发布"
+                                name="33">
+                <div>1.升级 SpringCloud 至 2021.0.6</div>
+                <div>2.升级 SpringBoot 至 2.7.10</div>
+                <div>3.升级 SpringBootAdmin 至 2.7.10</div>
+                <div>4.升级 AlibabaCloud 至 2021.0.5.0</div>
+                <div>5.升级 Mybatis-Plus 至 3.5.3.1</div>
+                <div>6.升级 Mybatis-Plus-Generator 至 3.5.3.1</div>
+                <div>7.升级 Nacos 至 2.1.2</div>
+                <div>8.升级 Seata 至 1.6.1</div>
+                <div>9.升级 Knife4j 至 4.1.0</div>
+                <div>10.升级 Log4j 至 2.20.0</div>
+                <div>11.升级 Avue2 至 2.10.10</div>
+                <div>12.升级 Avue3 至 3.2.13</div>
+                <div>13.新增 基于Vue3与Element-Plus版本的Saber正式发布</div>
+                <div>14.新增 关闭Token默认签名，用户需自行设置后启动服务</div>
+                <div>15.新增 Vue3版代码生成</div>
+                <div>16.优化 pom依赖机制</div>
+              </el-collapse-item>
               <el-collapse-item title="3.5.0发布 新增报文加密 令牌签名校验提示"
                                 name="32">
                 <div>1.新增 报文加密功能</div>
@@ -524,26 +543,27 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import {mapGetters} from "vuex";
 import thirdRegister from '@/components/third-register/main.vue'
+
 export default {
   name: "wel",
   components: {
     thirdRegister
   },
-  data () {
+  data() {
     return {
       activeNames: ['1', '2', '3', '5'],
-      logActiveNames: ['32']
+      logActiveNames: ['33']
     };
   },
   computed: {
     ...mapGetters(["userInfo"]),
   },
-  created () {
+  created() {
   },
   methods: {
-    handleChange (val) {
+    handleChange(val) {
       console.log(val);
     }
   }

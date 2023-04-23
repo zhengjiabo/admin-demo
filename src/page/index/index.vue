@@ -86,7 +86,7 @@ export default {
               itemActive = this.menu[childItemActive].children[childItemActive];
             }
           }
-          this.$store.commit('SET_MENUID', item);
+          this.$store.commit('SET_MENU_ID', item);
           this.$router.push({
             path: itemActive.path
           });

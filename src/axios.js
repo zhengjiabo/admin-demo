@@ -15,6 +15,9 @@ import website from '@/config/website';
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 import { Base64 } from 'js-base64';
+import { isURL } from 'utils/validate';
+import { baseUrl } from '@/config/env';
+
 axios.defaults.timeout = 10000;
 //返回其他状态吗
 axios.defaults.validateStatus = function (status) {
@@ -29,6 +32,10 @@ NProgress.configure({
 //HTTPrequest拦截
 axios.interceptors.request.use(config => {
   NProgress.start() // start progress bar
+  //地址为已经配置状态则不添加前缀
+  if (!isURL(config.url) && !config.url.startsWith(baseUrl)) {
+    config.url = baseUrl + config.url;
+  }
   const meta = (config.meta || {});
   const isToken = meta.isToken === false;
   config.headers['Authorization'] = `Basic ${Base64.encode(`${website.clientId}:${website.clientSecret}`)}`;

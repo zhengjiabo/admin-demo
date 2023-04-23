@@ -1,9 +1,8 @@
 import request from '@/axios';
-import { baseUrl } from '@/config/env';
 
 export const getList = (current, size, params) => {
   return request({
-    url: baseUrl + '/blade-system/menu/list',
+    url: '/blade-system/menu/list',
     method: 'get',
     params: {
       ...params,
@@ -14,7 +13,7 @@ export const getList = (current, size, params) => {
 }
 export const remove = (ids) => {
   return request({
-    url: baseUrl + '/blade-system/menu/remove',
+    url: '/blade-system/menu/remove',
     method: 'post',
     params: {
       ids,
@@ -24,7 +23,7 @@ export const remove = (ids) => {
 
 export const add = (row) => {
   return request({
-    url: baseUrl + '/blade-system/menu/submit',
+    url: '/blade-system/menu/submit',
     method: 'post',
     data: row
   })
@@ -32,7 +31,7 @@ export const add = (row) => {
 
 export const update = (row) => {
   return request({
-    url: baseUrl + '/blade-system/menu/submit',
+    url: '/blade-system/menu/submit',
     method: 'post',
     data: row
   })
@@ -40,7 +39,7 @@ export const update = (row) => {
 
 export const getMenu = (id) => {
   return request({
-    url: baseUrl + '/blade-system/menu/detail',
+    url: '/blade-system/menu/detail',
     method: 'get',
     params: {
       id,
@@ -50,7 +49,7 @@ export const getMenu = (id) => {
 
 export const getLazyMenuList = (parentId, params) => {
   return request({
-    url: baseUrl + '/blade-system/menu/lazy-menu-list',
+    url: '/blade-system/menu/lazy-menu-list',
     method: 'get',
     params: {
       ...params,

@@ -1,15 +1,28 @@
-import Cookies from 'js-cookie'
-import website from '@/config/website'
-const Authorization = website.Authorization
-var inFifteenMinutes = new Date(new Date().getTime() + website.tokenTime * 1000);
-export function getToken () {
-  return Cookies.get(Authorization)
+import Cookies from 'js-cookie';
+
+const TokenKey = 'saber3-access-token';
+const RefreshTokenKey = 'saber3-refresh-token';
+
+export function getToken() {
+  return Cookies.get(TokenKey);
 }
 
-export function setToken (token) {
-  return Cookies.set(Authorization, token, { expires: inFifteenMinutes })
+export function setToken(token) {
+  return Cookies.set(TokenKey, token);
 }
 
-export function removeToken () {
-  return Cookies.remove(Authorization)
+export function getRefreshToken() {
+  return Cookies.get(RefreshTokenKey);
+}
+
+export function setRefreshToken(token) {
+  return Cookies.set(RefreshTokenKey, token);
+}
+
+export function removeToken() {
+  return Cookies.remove(TokenKey);
+}
+
+export function removeRefreshToken() {
+  return Cookies.remove(RefreshTokenKey);
 }

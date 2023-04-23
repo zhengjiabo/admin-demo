@@ -69,7 +69,7 @@ export default {
         index: true,
         selection: true,
         labelWidth: 120,
-        menuWidth: 250,
+        menuWidth: 285,
         viewBtn: true,
         column: [
           {
