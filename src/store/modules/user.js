@@ -22,18 +22,11 @@ const user = {
       return new Promise((resolve, reject) => {
         loginByUsername(userInfo.tenantId, userInfo.username, userInfo.password, userInfo.type, userInfo.key, userInfo.code).then(res => {
           const data = res.data;
-          if (data.success) {
-            commit('SET_TOKEN', data.data.accessToken);
-            commit('SET_REFRESH_TOKEN', data.data.refreshToken);
-            commit('SET_USER_INFO', data.data);
-            commit('DEL_ALL_TAG');
-            commit('CLEAR_LOCK');
-          } else {
-            ElMessage({
-              message: data.msg,
-              type: 'error'
-            })
-          }
+          commit('SET_TOKEN', data.accessToken);
+          commit('SET_REFRESH_TOKEN', data.refreshToken);
+          commit('SET_USER_INFO', data);
+          commit('DEL_ALL_TAG');
+          commit('CLEAR_LOCK');
           resolve();
         }).catch(err => {
           reject(err)
@@ -88,10 +81,10 @@ const user = {
     RefreshToken ({ state, commit }) {
       return new Promise((resolve, reject) => {
         refreshToken(state.refreshToken).then(res => {
-          const data = res.data.data;
-          commit('SET_TOKEN', data.data.accessToken);
-          commit('SET_REFRESH_TOKEN', data.data.refreshToken);
-          commit('SET_USER_INFO', data.data);
+          const data = res.data
+          commit('SET_TOKEN', data.accessToken);
+          commit('SET_REFRESH_TOKEN', data.refreshToken);
+          commit('SET_USER_INFO', data);
           resolve(data);
         }).catch(error => {
           reject(error)
@@ -146,7 +139,7 @@ const user = {
           const data = res.data.data
           let menu = deepClone(data);
           menu.forEach(ele => formatPath(ele, true));
-          console.log(menu)
+          // console.log(menu)
           commit('SET_MENU', menu);
           commit('SET_MENU_ALL', menu);
           dispatch('GetButtons');

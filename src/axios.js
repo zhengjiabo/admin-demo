@@ -68,6 +68,20 @@ axios.interceptors.response.use(res => {
     })
     return Promise.reject(new Error(message))
   }
+  const {data = {}} = res
+  function addMoreInfo (data) {
+    Object.keys(data).forEach(key => {
+      if (!key.includes('_')) return 
+      const prop = key.replace(/_(\w)/g, ([, w]) => {
+        return w.toUpperCase()
+      })
+      Object.assign(data, {
+        [prop]: data[key]
+      })
+    })
+  }
+  addMoreInfo(res)
+  addMoreInfo(data)
   return res;
 }, error => {
   NProgress.done();

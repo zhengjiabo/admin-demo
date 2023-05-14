@@ -11,11 +11,14 @@ export default ({ mode, command }) => {
       port: 2888,
       proxy: {
         '/api': {
-          target: 'http://localhost',
+          target: 'https://saber3.bladex.cn/api',
+          // target: 'http://192.168.x.x',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
+          // http://192.168.2.108:2888/api/blade-auth/oauth/token?grantType=captcha&tenantId=000000&username=admin&password=21232f297a57a5a743894a0e4a801fc3&type=account&scope=all
+          // https://192.168.x.x/blade-auth/oauth/token?grantType=captcha&tenantId=000000&username=admin&password=21232f297a57a5a743894a0e4a801fc3&type=account&scope=all
         }
-      }
+      },
     },
     resolve: {
       alias: {

@@ -2,7 +2,7 @@ import request from '@/axios';
 import website from "@/config/website";
 
 export const loginByUsername = (tenantId, account, password, type, key, code) => request({
-  url: '/blade-auth/token',
+  url: '/blade-auth/oauth/token',
   method: 'post',
   headers: {
     'Captcha-Key': key,
@@ -11,14 +11,15 @@ export const loginByUsername = (tenantId, account, password, type, key, code) =>
   params: {
     grantType: (website.captchaMode ? "captcha" : "password"),
     tenantId,
-    account,
-    password,
-    type
+    username: account,
+    password: '21232f297a57a5a743894a0e4a801fc3',
+    type,
+    scope: "all",
   }
 });
 
 export const loginBySocial = (tenantId, source, code, state) => request({
-  url: '/blade-auth/token',
+  url: '/blade-auth/oauth/token',
   method: 'post',
   headers: {
     'Tenant-Id': tenantId
@@ -44,7 +45,7 @@ export const getUserInfo = () => request({
 });
 
 export const refreshToken = (refreshToken) => request({
-  url: '/blade-auth/token',
+  url: '/blade-auth/oauth/token',
   method: 'post',
   params: {
     refreshToken,
@@ -71,7 +72,7 @@ export const getMenu = () => request({
 });
 
 export const getCaptcha = () => request({
-  url: '/blade-auth/captcha',
+  url: '/blade-auth/oauth/captcha',
   method: 'get'
 });
 
@@ -87,6 +88,6 @@ export const sendLogs = (list) => request({
 })
 
 export const logout = () => request({
-  url: '/blade-auth/logout',
+  url: '/blade-auth/oauth/logout',
   method: 'post'
 })
